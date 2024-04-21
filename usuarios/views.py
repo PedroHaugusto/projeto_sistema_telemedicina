@@ -8,53 +8,55 @@ from django.contrib import auth
 
 # Create your views here.
 
-def cadastro(request): 
+def cadastro(request):
     if request.method == "GET":
-     return render(request, 'cadastro.html')
+        return render(request, 'cadastro.html')
     elif request.method == "POST":
-       username = request.POST.get('username')
-       email = request.POST.get('email')
-       senha = request.POST.get('senha')
-       confirmar_senha = request.POST.get('confirmar_senha')
-    
-    if senha != confirmar_senha:
-       messages.add_message(request, constants.ERROR, "A senha e o confirmar senha devem ser iguais")
-       return redirect('/usuarios/cadastro')
-    
-    if len(senha) < 6:
-       messages.add_message(request, constants.ERROR, "A senha deve ter mais de 6 caracteres")
-       return redirect('/usuarios/cadastro')
-    
-    users = User.objects.filter(username=username)
-    print(users.exists())
+        username = request.POST.get('username')
+        email = request.POST.get("email")
+        senha = request.POST.get("senha")
+        confirmar_senha = request.POST.get('confirmar_senha')
 
-    if users.exist():
-       messages.add_message(request, constants.ERROR, "Já existe usuário com esse username!")
-       return redirect('/usuarios/cadastro')
-    
-    user = User.objects.create_user(
-       username=username ,
-       email=email,
-       password=senha
-    )
+        users = User.objects.filter(username=username)
 
-    return redirect('/usuarios/login')
+        if users.exists():
+            print('Erro 1')
+            return redirect('/usuarios/cadastro')
+
+        if senha != confirmar_senha:
+            print('Erro ')
+            return redirect('/usuarios/cadastro')
+
+        if len(senha) < 6:
+            print('Erro 3')
+            return redirect('/usuarios/cadastro')
+        
+        try:
+            User.objects.create_user(
+                username=username,
+                email=email,
+                password=senha
+            )
+            return redirect('/usuarios/login')
+        except:
+            print('Erro 4')
+            return redirect('/usuarios/cadastro')
  
 def login_view(request):
     if request.method == "GET":
-      return render(request, 'login.html')
-    elif request.method == "POST" :
-       username = request.POST.get('username')
-       senha = request.POST.get('senha')
-       
-       user = auth.authenticate(request, username=username, password=senha )
-       
-       if user:
-          auth.login(request, user)
-          return redirect('/pacientes/home')
-       
-       messages.add_message(request, constants.ERROR, 'Usuário ou senha inválidos')
-       return redirect('usuarios/login')
+        return render(request, 'login.html')
+    elif request.method == "POST":
+        username = request.POST.get('username')
+        senha = request.POST.get("senha")
+
+        user = auth.authenticate(request, username=username, password=senha)
+
+        if user:
+            auth.login(request, user)
+            return redirect('/pacientes/home')
+
+        messages.add_message(request, constants.ERROR, 'Usuário ou senha incorretos')
+        return redirect('/usuarios/login')
     
     
 def sair(request):
