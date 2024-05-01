@@ -1,7 +1,23 @@
+<<<<<<< HEAD
 {% extends "base.html" %} {% load static %} {% block 'head' %}
 <link rel="stylesheet" href="{% static 'medicos/css/cadastro_medico.css' %}" />
 
 {% endblock 'head' %} {% block 'body' %}
+=======
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block 'head' %}
+
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}" />
+<link rel="stylesheet" href="{% static 'medicos/css/cadastro_medico.css' %}" />
+{% endblock 'head' %} 
+
+{% block 'body' %}
+
+{% include "partials/navbar.html" %}
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 
 <div class="container">
   <br />
@@ -10,9 +26,13 @@
     <div class="col-md-8">
       <p class="p-bold">
         Olá, <span class="color-dark">{{request.user.username}}</span>
+<<<<<<< HEAD
         <span class="color-dark"></span>
       </p>
 
+=======
+      </p>
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
       <p class="p-bold">Vamos realizar seu cadastro médico legal.</p>
       {% if messages %}
       <br />
@@ -20,7 +40,11 @@
       <section class="alert {{message.tags}}">{{message}}</section>
       {% endfor %} {% endif %}
       <br />
+<<<<<<< HEAD
       <form action="{% url 'cadastro_medico' %}" method="post" enctype='multipart/form-data'>{% csrf_token %}
+=======
+      <form action="{% url 'cadastro_medico' %}" method="post" enctype="multipart/form-data">{% csrf_token %} 
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
         <div class="row">
           <div class="col-md">
             <label for="">CRM:</label>
@@ -139,5 +163,8 @@
     <div class="col-md-4"></div>
   </div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 {% endblock 'body' %}

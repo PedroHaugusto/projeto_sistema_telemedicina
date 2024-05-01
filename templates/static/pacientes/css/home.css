@@ -1,24 +1,42 @@
 .especialidades{
+<<<<<<< HEAD
     font-size: 20px;
+=======
+  font-size: 20px;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 }
 
 .card-medicos{
 
+<<<<<<< HEAD
     width: 60%;
     background-color: #EAEAEA;
     border: 1px solid var(--main-color);
     padding: 20px;
+=======
+  width: 60%;
+  background-color: #EAEAEA;
+  border: 1px solid var(--main-color);
+  padding: 20px;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 
 }
 
 .foto-perfil-card{
+<<<<<<< HEAD
     width: 90px;
     height: 90px;
     border-radius: 45px;
+=======
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 
 }
 
 .foto-perfil-card-lg{
+<<<<<<< HEAD
     width: 180px;
     height: 180px;
     border-radius: 90px;
@@ -26,10 +44,20 @@
 }
 .icon-main{
     color: var(--main-color);
+=======
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+
+}
+.icon-main{
+  color: var(--main-color);
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 }
 
 .bg-main-lembrete{
 
+<<<<<<< HEAD
     background-color: var(--dark-color);
     padding: 10px;
     color: white;
@@ -42,10 +70,25 @@
 table {
     border-collapse: collapse !important;
     width: 100%;
+=======
+  background-color: var(--dark-color);
+  padding: 10px;
+  color: white;
+}
+
+.icon-differential{
+  color: var(--contrast-color);
+}
+
+table {
+  border-collapse: collapse !important;
+  width: 100%;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 }
 
 th, td {
 
+<<<<<<< HEAD
     padding: 8px;
     text-align: center;
     background-color: #EAEAEA !important;
@@ -83,25 +126,82 @@ th {
 .conteudo-data{
     padding: 15px;
     color: black;
+=======
+  padding: 8px;
+  text-align: center;
+  background-color: #EAEAEA !important;
+}
+
+th {
+  background-color: #EAEAEA;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.today {
+  background-color: var(--dark-color);
+}
+
+.selecionar-dia{
+  width: 100%;
+  background-color: #EAEAEA;
+  box-shadow: 1px 1px 10px gray;
+}
+
+.header-dias{
+  background-color: var(--dark-color);
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.dia-semana{
+  float: right;
+}
+
+.conteudo-data{
+  padding: 15px;
+  color: black;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 }
 
 
 .link:hover{
+<<<<<<< HEAD
     text-decoration: none;
+=======
+  text-decoration: none;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 } 
 
 .list-minhas-consultas{
 
+<<<<<<< HEAD
     background-color: #EAEAEA;
 
     padding: 10px;
+=======
+  background-color: #EAEAEA;
+
+  padding: 10px;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 
 }
 
 .documentos{
+<<<<<<< HEAD
     background-color: #cfcfcf;
     color: black;
     padding: 20px;
     border-radius: 10px;
     font-size: 20px;
+=======
+  background-color: #cfcfcf;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 }

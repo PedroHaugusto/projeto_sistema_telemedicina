@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
      
     --main-color: #00CCBE;
@@ -21,3 +22,19 @@
 .color-dark{
     color: var(--dark-color);
 }
+=======
+:root {
+  --main-color: #00ccbe;
+  --dark-color: #09a6a3;
+  --contrast-color: #ffd686;
+}
+.bg-color-dark {
+  background-color: var(--main-color);
+}
+.p-bold {
+  font-weight: bold;
+}
+.color-dark {
+  color: var(--dark-color);
+}
+>>>>>>> d520939546067e8087767960f5c89772f547ed44

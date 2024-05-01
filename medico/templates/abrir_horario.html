@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %} {% load static %} {% block 'head' %}
 <link rel="stylesheet" href="{% static 'medicos/css/abrir_horario.css' %}" />
 <link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}" />
@@ -15,6 +16,31 @@
         >Olá, <span class="color-dark">{{request.user.username}}</span></label
       >
 
+=======
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block 'head' %}
+
+<link rel="stylesheet" href="{% static 'medicos/css/abrir_horario.css' %}" />
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}" />
+<link rel="stylesheet" href="{% static 'medicos/css/cadastro_medico.css' %}" />
+{% endblock 'head' %} 
+
+{% block 'body' %}
+
+{% include "partials/navbar.html" %}
+
+<div class="container">
+  <br /><br />
+  <div class="row">
+    <div class="col-md-8">
+      <img src="{{dados_medicos.foto.url}}" class="foto-perfil" alt="" />
+      <label style="margin-left: 30px; font-size: 25px" class="p-bold"
+        >Olá, <span class="color-dark">{{request.user.username}}</span></label
+      >
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
       <br />
       {% if messages %}
       <br />
@@ -46,11 +72,18 @@
       <p style="font-size: 25px" class="p-bold">Seus horários:</p>
       <ul class="list-group">
         {% for data in datas_abertas %}
+<<<<<<< HEAD
         <li class="list-group-item">{{data}}</li>
+=======
+        <li>{{data}}</li>
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
         {% endfor %}
       </ul>
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
 {% endblock 'body' %}

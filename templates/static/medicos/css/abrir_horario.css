@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .foto-perfil{
 
     width: 150px;
@@ -6,3 +7,10 @@
     border-radius: 75px;
 
 }
+=======
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+>>>>>>> d520939546067e8087767960f5c89772f547ed44

@@ -6,7 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portalmed.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'healing.settings')
+>>>>>>> d520939546067e8087767960f5c89772f547ed44
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
