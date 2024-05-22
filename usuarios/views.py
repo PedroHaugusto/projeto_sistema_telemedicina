@@ -1,16 +1,11 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.messages import constants
 from django.contrib import messages
 from django.contrib import auth
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d520939546067e8087767960f5c89772f547ed44
 # Create your views here.
-
 def cadastro(request):
     if request.method == "GET":
         return render(request, 'cadastro.html')
@@ -23,21 +18,17 @@ def cadastro(request):
         users = User.objects.filter(username=username)
 
         if users.exists():
-            print('Erro 1')
+            messages.add_message(request, constants.ERROR, "Usuario já existe.")
             return redirect('/usuarios/cadastro')
 
         if senha != confirmar_senha:
-            print('Erro ')
+            messages.add_message(request, constants.ERROR, "A senha e o confirmar senha devem ser iguais.")
             return redirect('/usuarios/cadastro')
 
         if len(senha) < 6:
-<<<<<<< HEAD
-            messages.add_message(request, constants.ERROR, 'A senha deve possuir pelo menos 6 caracteres')
-=======
-            print('Erro 3')
->>>>>>> d520939546067e8087767960f5c89772f547ed44
+            messages.add_message(request, constants.ERROR, "A senha deve ter mais de 6 digitos.")
             return redirect('/usuarios/cadastro')
-        
+ 
         try:
             User.objects.create_user(
                 username=username,
@@ -47,32 +38,23 @@ def cadastro(request):
             return redirect('/usuarios/login')
         except:
             print('Erro 4')
-            return redirect('/usuarios/cadastro')
-<<<<<<< HEAD
-        
-=======
- 
->>>>>>> d520939546067e8087767960f5c89772f547ed44
+        return redirect('/usuarios/cadastro')
+
 def login_view(request):
     if request.method == "GET":
         return render(request, 'login.html')
     elif request.method == "POST":
         username = request.POST.get('username')
-        senha = request.POST.get("senha")
+        senha = request.POST.get('senha')
 
         user = auth.authenticate(request, username=username, password=senha)
 
         if user:
             auth.login(request, user)
             return redirect('/pacientes/home')
-
-        messages.add_message(request, constants.ERROR, 'Usuário ou senha incorretos')
+        messages.add_message(request, constants.ERROR, 'Usuário ou senha inválidos.')
         return redirect('/usuarios/login')
-    
-<<<<<<< HEAD
-=======
-    
->>>>>>> d520939546067e8087767960f5c89772f547ed44
+
 def sair(request):
     auth.logout(request)
     return redirect('/usuarios/login')

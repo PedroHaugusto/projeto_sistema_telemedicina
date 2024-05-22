@@ -2,13 +2,11 @@
 {% load static %}
 
 {% block 'head' %}
-
     <link rel="stylesheet" href="{% static 'medicos/css/abrir_horario.css' %}">
     <link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}">
     <link rel="stylesheet" href="{% static 'medicos/css/cadastro_medico.css' %}">
     <link rel="stylesheet" href="{% static 'pacientes/css/home.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 {% endblock 'head' %}
 
 {% block 'body' %}
@@ -17,96 +15,38 @@
 
     <div class="container">
         <br>
-        {% if messages %}
-            <br>
-            {% for message in messages %}
-                <section class="alert {{message.tags}}">
-                    {{message}}
-                </section>
-            {% endfor %}
-        {% endif %}
         <h2><span class="color-dark">Suas consultas</span></h2>
-
         <div class="row">
-
             <div class="col-md">
-<<<<<<< HEAD
-
-                <form action="">
-                <select name="especialidade" class="form-select">
-                    {% for especialidade in especialidades %}
-                        <option value="{{especialidade.id}}">{{especialidade}}</option>
-                    {% endfor %}
-                </select>
-=======
                 <input type="text" name="especialidades" id="" class="form-control shadow-main-color" placeholder="Especialidades médias">
->>>>>>> d520939546067e8087767960f5c89772f547ed44
             </div>
             <div class="col-md">
                 <input type="date" name="data" id="" class="form-control shadow-main-color" placeholder="Data da consulta">
-
             </div>
             <div class="col-md">
                 <input type="submit" value="Filtrar" class="btn btn-dark-color-outline">
-<<<<<<< HEAD
-                </form>
-=======
->>>>>>> d520939546067e8087767960f5c89772f547ed44
             </div>
         </div>
-
         <br>
-        
-        <h2><span class="color-dark">Hoje</span></h2>
         <div class="list-minhas-consultas">
             <table class="table">
                 <thead>
-                  <tr>
-                    <th scope="col">Paciente</th>
+                <tr>
+                    <th scope="col">Médico</th>
                     <th scope="col">Status</th>
                     <th scope="col">Data</th>
-                  </tr>
+                </tr>
                 </thead>
                 <tbody>
-                    {% for consulta in consultas_hoje  %}
+                    {% for consulta in minhas_consultas %}
                         <tr>
-                            <td><a href=" {% url 'consulta' consulta.id %} ">{{consulta.paciente}}</a></td>
+                            <td><a href="{% url 'consulta' consulta.id %}">Dr(a). {{consulta.data_aberta.user}}</a></td>
                             <td>{{consulta.get_status_display}}</td>
                             <td>{{consulta.data_aberta.data}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
-              </table>
-
+            </table>
         </div>
-
-        <hr>
-        
-
-        <h2><span class="color-dark">Restantes</span></h2>
-        <div class="list-minhas-consultas">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Pacientes</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Data</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    {% for consulta in consultas_restantes  %}
-                        <tr>
-                            <td><a href="">{{consulta.paciente}}</a></td>
-                            <td>{{consulta.get_status_display}}</td>
-                            <td>{{consulta.data_aberta.data}}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-              </table>
-
-        </div>
-
-
     </div>
-
 {% endblock 'body' %}
