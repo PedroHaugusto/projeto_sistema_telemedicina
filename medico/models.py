@@ -18,10 +18,10 @@ class DadosMedico(models.Model):
     cep = models.CharField(max_length=15)
     rua = models.CharField(max_length=100)
     bairro = models.CharField(max_length=100)
-    numero = models.IntegerField()
+    numero = models.IntegerField(blank=True, null=True)  # Tornando o campo opcional
     rg = models.ImageField(upload_to='rgs')
     cedula_identidade_medica = models.ImageField(upload_to='cim')
-    foto = models.ImageField(upload_to='fotos_perfil')
+    foto = models.ImageField(upload_to='fotos_perfil', blank=False, null=False)
     descricao = models.TextField()
     valor_consulta = models.FloatField(default=100)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -35,6 +35,7 @@ class DadosMedico(models.Model):
         proxima_data = DatasAbertas.objects.filter(user=self.user).filter(data__gt=datetime.now()).filter(agendado=False).order_by('data').first()
 
         return proxima_data 
+
 
 class DatasAbertas(models.Model):
     data = models.DateTimeField()

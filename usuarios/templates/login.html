@@ -13,13 +13,12 @@
                 <br>
                 <br>
                 <section class="cont-logo">
-                    <img class="logo" src="{% static 'geral/img/logo.png' %}">
                     <label class="text-logo">PortalMED</label>
                 </section>
                 <hr>
  
                 <form action="{% url 'login' %}" method="POST">{% csrf_token %}
-                    <h2 class="fonte-destaque1">Logar</h2>
+                    <h2 class="fonte-destaque1">Entrar</h2>
                     {% if messages %}
                         <br>
                         {% for message in messages %}
@@ -29,15 +28,15 @@
                         {% endfor %}
                     {% endif %}
                     <br>
-                    <label for="">Username</label>
-                    <input type="text" name="username" id="" class="form-control" placeholder="Username ...">
+                    <label for="">Usuário</label>
+                    <input type="text" name="username" id="" class="form-control" placeholder="Digite seu usuário">
                     <br> 
  
                     <label for="">Senha</label>
-                    <input type="password" name="senha" class="form-control" placeholder="Digite sua senha ...">
+                    <input type="password" name="senha" class="form-control" placeholder="Digite sua senha">
                     <br>
 
-                    <input type="submit" value="Logar" class="btn btn-success btn-dark-color">
+                    <input type="submit" value="Entrar" class="btn btn-success btn-dark-color">
                     <a href="{% url 'cadastro' %}" class="btn btn-dark-color-outline">Não possuo uma conta</a>
                 </form>
             </div>

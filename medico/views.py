@@ -11,12 +11,11 @@ from paciente.models import Consulta, Documento
 def cadastro_medico(request):
 
     if is_medico(request.user):
-        messages.add_message(request, constants.WARNING, 'Voce já é médico.')
+        messages.add_message(request, constants.WARNING, 'Você já é médico.')
         return redirect('/medicos/abrir_horario')
 
     if request.method == "GET":
         especialidades = Especialidades.objects.all()        
-        
         return render(request, 'cadastro_medico.html', {'especialidades': especialidades, 'is_medico': is_medico(request.user)})
     elif request.method == "POST":
         crm = request.POST.get('crm')
@@ -25,27 +24,30 @@ def cadastro_medico(request):
         rua = request.POST.get('rua')
         bairro = request.POST.get('bairro')
         numero = request.POST.get('numero')
+        numero = None if not numero else int(numero)
+
         cim = request.FILES.get('cim')
         rg = request.FILES.get('rg')
         foto = request.FILES.get('foto')
         especialidade = request.POST.get('especialidade')
         descricao = request.POST.get('descricao')
         valor_consulta = request.POST.get('valor_consulta')
+        valor_consulta = None if not valor_consulta else float(valor_consulta)
 
         dados_medico = DadosMedico(
-        crm=crm,
-        nome=nome,
-        cep=cep,
-        rua=rua,
-        bairro=bairro,
-        numero=numero,
-        rg=rg,
-        cedula_identidade_medica=cim,
-        foto=foto,
-        especialidade_id=especialidade,
-        descricao=descricao,
-        valor_consulta=valor_consulta,
-        user=request.user
+            crm=crm,
+            nome=nome,
+            cep=cep,
+            rua=rua,
+            bairro=bairro,
+            numero=numero,
+            rg=rg,
+            cedula_identidade_medica=cim,
+            foto=foto,
+            especialidade_id=especialidade,
+            descricao=descricao,
+            valor_consulta=valor_consulta,
+            user=request.user
        )
 
         dados_medico.save()
