@@ -21,7 +21,6 @@ class DadosMedico(models.Model):
     numero = models.IntegerField(blank=True, null=True)  # Tornando o campo opcional
     rg = models.ImageField(upload_to='rgs')
     cedula_identidade_medica = models.ImageField(upload_to='cim')
-    foto = models.ImageField(upload_to='fotos_perfil', blank=False, null=False)
     descricao = models.TextField()
     valor_consulta = models.FloatField(default=100)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)

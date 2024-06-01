@@ -15,6 +15,8 @@ Clone o repositório do projeto usando o comando abaixo:
 ```bash
 git clone https://github.com/PedroHaugusto/projeto_sistema_telemedicina.git
 
+cd projeto_sistema_telemedicina\
+
 ```
 
 ## Passo 2: Crie e Ative o Ambiente Virtual

@@ -28,7 +28,6 @@ def cadastro_medico(request):
 
         cim = request.FILES.get('cim')
         rg = request.FILES.get('rg')
-        foto = request.FILES.get('foto')
         especialidade = request.POST.get('especialidade')
         descricao = request.POST.get('descricao')
         valor_consulta = request.POST.get('valor_consulta')
@@ -43,7 +42,6 @@ def cadastro_medico(request):
             numero=numero,
             rg=rg,
             cedula_identidade_medica=cim,
-            foto=foto,
             especialidade_id=especialidade,
             descricao=descricao,
             valor_consulta=valor_consulta,

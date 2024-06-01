@@ -16,7 +16,6 @@
         <div class="row">
             <div class="col-md-8">
                 
-                <img src="{{dados_medicos.foto.url}}" class="foto-perfil" alt="">
                 <label style="margin-left: 30px; font-size: 25px" class="p-bold">Olá, <span class="color-dark">{{request.user.username}}</span></label>
  
                 <br>
@@ -34,9 +33,9 @@
                 <form action="{% url 'abrir_horario' %}" method="POST">{% csrf_token %}
 
                     <label for="">Escolher data:</label>
-                    <input type="datetime-local" name="data" class="form-control shadow-main-color">
+                    <input type="datetime-local" name="data" id="data" class="form-control shadow-main-color">
                     <br>
-                    <input type="submit" value="Salvar" class="btn btn-success btn-dark-color">
+                    <input type="submit" value="Salvar" id="salvar-btn" class="btn btn-success btn-dark-color" disabled>
                 </form>
             </div>
             <div class="col-md-4">
@@ -48,5 +47,21 @@
                 </ul>
             </div>
         </div>
- </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var dataField = document.getElementById("data");
+            var saveButton = document.getElementById("salvar-btn");
+
+            dataField.addEventListener("input", function() {
+                if (dataField.value === "") {
+                    saveButton.disabled = true;
+                } else {
+                    saveButton.disabled = false;
+                }
+            });
+        });
+    </script>
+
 {% endblock 'body' %}

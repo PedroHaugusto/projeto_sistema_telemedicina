@@ -25,7 +25,6 @@ class Migration(migrations.Migration):
                 ('numero', models.IntegerField()),
                 ('rg', models.ImageField(upload_to='rgs')),
                 ('cedula_identidade_medica', models.ImageField(upload_to='cim')),
-                ('foto', models.ImageField(upload_to='fotos_perfil')),
                 ('descricao', models.TextField()),
                 ('valor_consulta', models.FloatField(default=100)),
                 ('especialidade', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='medico.especialidades')),
