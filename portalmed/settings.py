@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'portalmed.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+        'NAME' : 'portalmed_db',
+        'USER' : 'admin',
+        'PASSWORD' : 'Uo7tY6yvcjv9vtwMEX5YpOdpkuPODS2W',
+        'HOST' : 'dpg-cpe9ff5ds78s73espptg-a.oregon-postgres.render.com',
+        'PORT' : '5432',
     }
 }
 
