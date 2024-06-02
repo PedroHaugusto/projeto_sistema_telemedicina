@@ -15,7 +15,9 @@ SECRET_KEY = 'portalmed'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = [
+    'portalmed.onrender.com' 
+]
 
 # Application definition
 
