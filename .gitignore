@@ -1,20 +1,9 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
 # Django stuff:
 *.log
 *.pot
 *.pyc
 *.pyo
 *.sqlite3
-
-# If your project includes a settings_local.py for local settings
-settings_local.py
 
 # Environment variables
 .env
@@ -26,10 +15,6 @@ db.sqlite3
 # Django migrations
 */migrations/*
 !*/migrations/__init__.py
-
-# Media and static files
-/media
-/staticfiles
 
 # Python virtual environment
 .venv/
