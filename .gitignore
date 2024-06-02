@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+
+# If your project includes a settings_local.py for local settings
+settings_local.py
+
+# Environment variables
+.env
+
+# Database
+db.sqlite3
+*.db
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Media and static files
+/media
+/staticfiles
+
+# Python virtual environment
+.venv/
+env/
+ENV/
+venv/
+ENV.bak/
+
+# Jupyter Notebook files
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Logs and temp files
+*.log
+*.out
+*.pid
+*.swp
+*.swo
+*.swn
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# pytest
+.pytest_cache/
+
+# Pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# Node.js dependencies
+node_modules/
+
+# Sentry CLI
+.sentrycli/
+
+# Docker
+*.dockerignore
+Dockerfile
+docker-compose.yml
+.docker/
+
+# Terraform
+.terraform/
